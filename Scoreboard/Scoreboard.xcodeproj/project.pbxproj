@@ -20,8 +20,6 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2EB553792EBE9D1900809364 /* Scoreboard */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = Scoreboard;
 			sourceTree = "<group>";
 		};
@@ -71,7 +69,6 @@
 				440C325D3CFB1851360EA0CB /* Pods-Scoreboard.debug.xcconfig */,
 				D911424C5D861A585D2130F5 /* Pods-Scoreboard.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
