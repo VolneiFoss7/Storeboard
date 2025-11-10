@@ -35,23 +35,26 @@ struct OnboardingView: View {
         static let deepLinkPadding: CGFloat = 40
     }
     
+
     let gradientColors: [Color] = [.onboardLowBg, .onboardHighBg]
     
     var body: some View {
-        VStack(spacing: Constants.bodySpacing){
-            onboardingIcon
-            textViews
-            buttonViews
-            deepLinks
+        NavigationView {
+            VStack(spacing: Constants.bodySpacing){
+                onboardingIcon
+                textViews
+                buttonViews
+                deepLinks
+            }
+            .ignoresSafeArea(.all)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: gradientColors),
+                    startPoint: .leading,
+                    endPoint: .trailing)
+            )
         }
-        .ignoresSafeArea(.all)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(
-            LinearGradient(
-                gradient: Gradient(colors: gradientColors),
-                startPoint: .leading,
-                endPoint: .trailing)
-        )
     }
     
     private var onboardingIcon: some View {
@@ -84,7 +87,9 @@ struct OnboardingView: View {
     private var buttonViews: some View {
         VStack(spacing: Constants.buttonSpacing){
             
-            Button(action: {}) {
+            NavigationLink {
+                
+            } label: {
                 Text(Constants.signInTitle)
                     .frame(maxWidth: .infinity)
                     .foregroundStyle(.onboardHighBg)
@@ -95,7 +100,9 @@ struct OnboardingView: View {
                     )
             }
             
-            Button(action: {}){
+            NavigationLink {
+                
+            } label: {
                 Text(Constants.createAccountTitle)
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
@@ -111,15 +118,21 @@ struct OnboardingView: View {
     
     private var deepLinks: some View {
         HStack(spacing: Constants.deepLinkSpacing){
-            Button(action: {}){
+            NavigationLink {
+                
+            } label: {
                 Text(Constants.termsTitle)
             }
             
-            Button(action: {}){
+            NavigationLink {
+                
+            } label: {
                 Text(Constants.privacyTitle)
             }
             
-            Button(action: {}){
+            NavigationLink {
+                
+            } label: {
                 Text(Constants.helpTitle)
             }
         }
