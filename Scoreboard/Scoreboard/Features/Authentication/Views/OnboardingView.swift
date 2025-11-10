@@ -88,7 +88,7 @@ struct OnboardingView: View {
         VStack(spacing: Constants.buttonSpacing){
             
             NavigationLink {
-                
+                SignInView()
             } label: {
                 Text(Constants.signInTitle)
                     .frame(maxWidth: .infinity)
@@ -98,19 +98,6 @@ struct OnboardingView: View {
                         RoundedRectangle(cornerRadius: Constants.buttonRadius)
                             .fill(.white)
                     )
-            }
-            
-            NavigationLink {
-                
-            } label: {
-                Text(Constants.createAccountTitle)
-                    .foregroundStyle(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: Constants.buttonRadius)
-                            .stroke(.white, lineWidth: 1)
-                    }
             }
         }
         .padding(.horizontal)
