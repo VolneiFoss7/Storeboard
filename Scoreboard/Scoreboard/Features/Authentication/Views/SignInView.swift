@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct SignInView: View {
     
     enum Constants {
@@ -21,12 +23,29 @@ struct SignInView: View {
         static let passwordInput = "signIn_password_input".localized
         
         static let forgotPasswordTitle = "signIn_forgot_password".localized
-        
         static let signInButton = "onboarding_sign_in".localized
+        
+        // Sizes
+        static let headerSpacing: CGFloat = 12
+        static let headerHorizontalPadding: CGFloat = 16
+        
+        static let inputVerticalSpacing: CGFloat = 20
+        static let labelSpacing: CGFloat = 4
+        static let inputHorizontalPadding: CGFloat = 12
+        static let inputVerticalPadding: CGFloat = 14
+        static let inputCornerRadius: CGFloat = 8
+        static let inputBorderWidth: CGFloat = 1
+        static let inputTopPadding: CGFloat = 24
+        static let inputHorizontalViewPadding: CGFloat = 16
+        
+        static let buttonCornerRadius: CGFloat = 8
+        static let buttonVerticalPadding: CGFloat = 16
+        static let buttonHorizontalPadding: CGFloat = 16
+        static let buttonTopPadding: CGFloat = 28
     }
     
-    @State var email: String = ""
-    @State var password: String = ""
+    @State private var email: String = ""
+    @State private var password: String = ""
     
     var body: some View {
         NavigationView {
@@ -41,7 +60,7 @@ struct SignInView: View {
     }
     
     private var signInHeader: some View {
-        VStack(alignment: .leading, spacing: 12){
+        VStack(alignment: .leading, spacing: Constants.headerSpacing) {
             Text(Constants.signInTitle)
                 .font(.largeTitle)
             
@@ -50,72 +69,72 @@ struct SignInView: View {
                 .foregroundStyle(.gray.opacity(0.9))
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.horizontal)
+        .padding(.horizontal, Constants.headerHorizontalPadding)
     }
     
     private var inputViews: some View {
-        VStack(spacing: 20){
-            VStack(alignment: .leading, spacing: 4){
+        VStack(spacing: Constants.inputVerticalSpacing) {
+            
+            VStack(alignment: .leading, spacing: Constants.labelSpacing) {
                 Text(Constants.emailLabel)
                 TextField(Constants.emailInput, text: $email)
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 14)
+                    .padding(.horizontal, Constants.inputHorizontalPadding)
+                    .padding(.vertical, Constants.inputVerticalPadding)
                     .background(
-                        RoundedRectangle(cornerRadius: 8)
+                        RoundedRectangle(cornerRadius: Constants.inputCornerRadius)
                             .fill(Color.gray.opacity(0.1))
                     )
                     .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                        RoundedRectangle(cornerRadius: Constants.inputCornerRadius)
+                            .stroke(Color.gray.opacity(0.5), lineWidth: Constants.inputBorderWidth)
                     )
             }
             
-            VStack(alignment: .leading, spacing: 4){
+            VStack(alignment: .leading, spacing: Constants.labelSpacing) {
                 Text(Constants.passwordLabel)
                 TextField(Constants.passwordInput, text: $password)
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 14)
+                    .padding(.horizontal, Constants.inputHorizontalPadding)
+                    .padding(.vertical, Constants.inputVerticalPadding)
                     .background(
-                        RoundedRectangle(cornerRadius: 8)
+                        RoundedRectangle(cornerRadius: Constants.inputCornerRadius)
                             .fill(Color.gray.opacity(0.1))
                     )
                     .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                        RoundedRectangle(cornerRadius: Constants.inputCornerRadius)
+                            .stroke(Color.gray.opacity(0.5), lineWidth: Constants.inputBorderWidth)
                     )
                 
                 NavigationLink {
-                    
+                    // Forgot password view
                 } label: {
                     Text(Constants.forgotPasswordTitle)
                         .font(.callout)
                         .foregroundStyle(.onboardHighBg)
                         .frame(maxWidth: .infinity, alignment: .trailing)
                 }
-
             }
         }
         .padding(.horizontal)
-        .padding(.top, 24)
+        .padding(.top, Constants.inputTopPadding)
     }
     
     private var signInButtons: some View {
         VStack {
             Button {
-                
+                // Sign in action
             } label: {
                 Text(Constants.signInButton)
                     .frame(maxWidth: .infinity)
                     .foregroundStyle(.white)
-                    .padding(.vertical)
+                    .padding(.vertical, Constants.buttonVerticalPadding)
                     .background(
-                        RoundedRectangle(cornerRadius: 8)
+                        RoundedRectangle(cornerRadius: Constants.buttonCornerRadius)
                             .fill(.onboardHighBg)
                     )
             }
         }
-        .padding(.horizontal)
-        .padding(.top, 28)
+        .padding(.horizontal, Constants.buttonHorizontalPadding)
+        .padding(.top, Constants.buttonTopPadding)
     }
 }
 
