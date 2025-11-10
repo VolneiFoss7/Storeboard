@@ -18,6 +18,50 @@
         }
       }
     },
+    "forgot_password_back_to_sign_in" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back to Sign In"
+          }
+        }
+      }
+    },
+    "forgot_password_reset_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset Password"
+          }
+        }
+      }
+    },
+    "forgot_password_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No worries, we'll get you back in the game"
+          }
+        }
+      }
+    },
+    "forgot_password_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forgot Password?"
+          }
+        }
+      }
+    },
     "onboarding_help" : {
       "extractionState" : "manual",
       "localizations" : {

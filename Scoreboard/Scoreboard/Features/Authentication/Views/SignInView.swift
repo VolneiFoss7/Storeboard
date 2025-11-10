@@ -105,7 +105,7 @@ struct SignInView: View {
                     )
                 
                 NavigationLink {
-                    // Forgot password view
+                    ForgotPasswordView()
                 } label: {
                     Text(Constants.forgotPasswordTitle)
                         .font(.callout)
