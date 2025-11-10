@@ -6,5 +6,7 @@ target 'Scoreboard' do
   use_frameworks!
 
   # Pods for Scoreboard
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
 
 end

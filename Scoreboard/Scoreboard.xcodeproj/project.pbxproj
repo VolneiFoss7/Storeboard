@@ -20,6 +20,8 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2EB553792EBE9D1900809364 /* Scoreboard */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = Scoreboard;
 			sourceTree = "<group>";
 		};
@@ -83,6 +85,7 @@
 				2EB553732EBE9D1900809364 /* Sources */,
 				2EB553742EBE9D1900809364 /* Frameworks */,
 				2EB553752EBE9D1900809364 /* Resources */,
+				2B5EE65A28DFB19B8750D8F5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +144,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2B5EE65A28DFB19B8750D8F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Scoreboard/Pods-Scoreboard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Scoreboard/Pods-Scoreboard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Scoreboard/Pods-Scoreboard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		60AABFAD5310D6F3CD380E98 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
